@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  db:
+    image: artifactory.lstprod.net/diops-docker-mirror/postgres:12.7-alpine
+    restart: always
+    ports:
+        - "5432:5432"
+    environment:
+        POSTGRES_USER: tradding
+        POSTGRES_PASSWORD: tradding
+        POSTGRES_DB: tradding
+    command: ["postgres", "-c", "log_statement=all"]
